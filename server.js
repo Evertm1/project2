@@ -31,7 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// mount the session middleware
+// mount the session middleware // takes cookie apart and populates it
 app.use(session({
   secret: 'SEI Rocks!',
   resave: false,
