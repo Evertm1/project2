@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema({
     text: String,
     rating: { type: Number, min: 1, max: 5},
-    //userId: {type: Schema.Types.ObjectId, ref: 'User'}
-//  userName: String,  --- reference name in user model
+    userId: {type: String}, // - check on spelling
+    userName: String, // --- reference name in user model- req.user.name?
 //  date: Date,
 
 },

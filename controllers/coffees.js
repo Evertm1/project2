@@ -4,7 +4,7 @@ module.exports = {
     index,
     show,
     description, //another show page
- //   create,
+   // create,
 }
 
 function index(req, res){
@@ -19,10 +19,10 @@ function show(req, res){
     console.log(req.params.roastType, "<- req.params in show route")
     Coffee.find({"roastType": `${req.params.roastType}`}, function(err, coffeeDocument){
         console.log(coffeeDocument);
-        res.send(coffeeDocument) // will change to res.render
-        // res.render('coffees/show', {
-        //     coffee: coffeeDocument
-        // })
+        // res.send(coffeeDocument) // will change to res.render
+        res.render('coffees/show', {
+            coffee: coffeeDocument
+        })
     })
 }
 //^ looks through Coffee database and finds roastType: req.params(which is defined by hrefs in index page), then sends over all coffees
@@ -37,11 +37,14 @@ function show(req, res){
 
 function description(req, res){
     console.log(req.params, "req.params in description route")
-    Coffee.findById(req.params.id), function(err, coffeeDocument){
-        res.send(coffeeDocument)
-        // res.render('coffees/description', {
-        //     coffee: coffeeDocument
-        // })
+    Coffee.findById(req.params.id, function(err, coffeeDocument){
+        //res.send(coffeeDocument)
+        console.log(coffeeDocument);
+        console.log(req.user);
+         res.render('coffees/description', {
+             coffee: coffeeDocument,
+            
+         })
 
-    }
+    })
 }

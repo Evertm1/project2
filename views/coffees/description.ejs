@@ -1,1 +1,34 @@
-<h1>coffee description and review page</h1>
+
+
+<h1><%= coffee.coffeeName %></h1>
+<h1><%= coffee.roaster %></h1>
+<h1><%= coffee.roastType %> Roast</h1>
+
+
+  </tbody>
+</table>
+<% coffee.reviews.forEach(function(c) { %>
+    <tr>
+        <td><%= c.userName %>:</td>
+        <td><%= c.text %></td>
+        <td><%= c.rating %></td>
+        <td><%= c.user %></td>
+        <button>Delete</button><br>
+        
+      </tr>
+<% }); %>
+
+
+<form id="add-review-form" method="POST" action="/coffees/description/<%= coffee._id %>">
+    <label>Write a review:</label>
+    <textarea name="text"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
