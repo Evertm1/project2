@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema({
     text: String,
     rating: { type: Number, min: 1, max: 5},
-//  userId: ObjectId,  --- {type: Schema.Types.ObjectId, ref: 'User'}
+    //userId: {type: Schema.Types.ObjectId, ref: 'User'}
 //  userName: String,  --- reference name in user model
 //  date: Date,
 
@@ -18,6 +18,7 @@ const reviewSchema = new mongoose.Schema({
 const coffeeSchema = new mongoose.Schema({
     coffeeName: String,
     roaster: String,
+    description: String,
     roastType: String, // <-- This property needs to be on your user model for your project
     reviews: [reviewSchema] // embed reviews schema
   }, {
