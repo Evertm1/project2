@@ -8,6 +8,8 @@
   </tbody>
 </table>
 <% coffee.reviews.forEach(function(c) { %>
+    <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=DELETE"
+        class="delete-form" method="POST"> 
     <tr>
         <td><%= c.userName %>:</td>
         <td><%= c.text %></td>
@@ -16,6 +18,7 @@
         <button>Delete</button><br>
         
       </tr>
+    </form>
 <% }); %>
 
 
