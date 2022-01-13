@@ -8,17 +8,44 @@
   </tbody>
 </table>
 <% coffee.reviews.forEach(function(c) { %>
-    <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=DELETE"
-        class="delete-form" method="POST"> 
+    
     <tr>
         <td><%= c.userName %>:</td>
         <td><%= c.text %></td>
         <td><%= c.rating %></td>
         <td><%= c.user %></td>
-        <button>Delete</button><br>
+        <%# console.log(c.userId, user._id) %>
+        <% if (user && c.userId === user._id.toString()) { %>
         
+         <%# if (c.userId.equals(user._id)) { %>
+        <%# if (user && c.userId.equals(user._id)) { %>
+
+        
+        <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=DELETE"
+            class="delete-form" method="POST"> 
+        <button>Delete</button>
+        </form>
+        <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=PUT"
+            class="update-form" method="POST">
+        <input type="hidden" value="<%=c._id%>" name="id"/>
+        <label>Edit Review</label>
+        <textarea name="editReviewText"></textarea>
+        <label>Edit Rating</label>
+        <select name="editRating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        <button> Save </button><br>
+        </form>
+        
+        <% } %>
+        
+
       </tr>
-    </form>
+    
 <% }); %>
 
 

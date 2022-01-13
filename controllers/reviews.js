@@ -3,6 +3,7 @@ const Coffee = require('../models/coffee');
 module.exports = {
 	create,
     delete: deleteReview, 
+    update,
 }
 
 
@@ -42,3 +43,22 @@ function create(req, res){
         
     })}
 
+function update (req, res){
+    console.log(req.body)
+    Coffee.findById(req.params.id, async function (err, coffeeDocument){
+        try {
+            console.log("update function");
+            let review = await coffeeDocument.reviews.filter(review => review._id.toString() === req.body.id)
+            console.log(review) // <---- review form edit button is now saved. apply logic to change the text and the rating
+            // change values of review and update the coffeeDocument reviews for specific coffee
+             review[0].text = req.body.editReviewText;
+             review[0].rating = req.body.editRating;
+            
+         
+        
+        coffeeDocument.save()
+        res.redirect(`/coffees/description/${coffeeDocument._id}`)
+        } catch (error) {
+            console.log(error)
+        }
+    })}

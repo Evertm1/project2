@@ -10,6 +10,8 @@ module.exports = {
 function index(req, res){
     console.log('index function')
     res.render('coffees/index')
+    console.log(req.user)
+
     // Coffee.find({},function (err, coffeeDocument){
     //     res.send(coffeeDocument)
     // })
@@ -41,8 +43,10 @@ function description(req, res){
         //res.send(coffeeDocument)
         console.log(coffeeDocument);
         console.log(req.user);
+        
          res.render('coffees/description', {
              coffee: coffeeDocument,
+             currentUser: req.user,
             
          })
 
