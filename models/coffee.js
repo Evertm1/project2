@@ -20,7 +20,9 @@ const coffeeSchema = new mongoose.Schema({
     roaster: String,
     description: String,
     roastType: String, // <-- This property needs to be on your user model for your project
-    reviews: [reviewSchema] // embed reviews schema
+    reviews: [reviewSchema], // embed reviews schema
+    notes: String,
+    link: String
   }, {
     timestamps: true
   });

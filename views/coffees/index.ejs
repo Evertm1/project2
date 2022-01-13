@@ -1,32 +1,14 @@
 <%- include('../partials/header') %>
-<body>
-    <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper">
-            <a href="" class="brand-logo left">Northwest Coffee Query</a>
-            <ul class="right">
-              <li>
-                <% if (user) { %>
-                  <a href="/logout">Log Out</a>
-                  <span>Hi <%= user.name %> </span>
-                <% } else { %>
-                  <a href="/auth/google"> Login with Google</a>
-    
-                <% } %>       
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+
 <h1>Index page</h1>
 
 <a href="auth/google"> Login with Google</a>
 
 <a href="/coffees/light">Light</a>
 <a href="/coffees/medium">Medium</a>
-<a href="/cofffees/dark">Dark</a>
-<a href="/coffees/all">All Coffees</a>
+<a href="/coffees/dark">Dark</a>
+
 
 <a href="/coffees/description/61dca79512a7b91a9f224db2">description page test</a>
 
-</body>
+<%- include('../partials/footer') %>

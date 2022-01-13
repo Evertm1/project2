@@ -1,11 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"></html>
 <head>
-    <title>SEI Student Fun Facts</title>
-    <!-- Google Icon Fonts used by Materialize -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Northwest Coffee Query</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+   
   </head>
+<body>
+
+    <nav>
+       <a href="/" class="nav-items">Northwest Coffee Query</a>
+        
+       <div class="nav-items">
+        <% if (user) { %>
+          <a href="/logout" class="nav-items">Log Out</a>
+          <span>| Hi <%= user.name %> </span>
+        <% } else { %>
+          <a href="/auth/google" class="nav-items"> Login with Google</a>
+
+        <% } %>       
+        </div>
+
+    </nav>
   
+  <main>

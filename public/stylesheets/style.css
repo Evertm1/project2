@@ -1,8 +1,30 @@
-.brand-logo {
-  margin-left: 15px;
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main"
 }
 
-.card .card-content .card-title {
+body > nav {
+  grid-area: nav;
+  background-color: #24252A;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+.nav-items {
+  color: #edf0f1;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+/* .card .card-content .card-title {
   margin-bottom: 10px;
 }
 
@@ -17,4 +39,4 @@
 
 .collection-item form {
   margin-top: -5px;
-}
+} */

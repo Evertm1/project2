@@ -1,8 +1,11 @@
-
+<%- include('../partials/header') %>
 
 <h1><%= coffee.coffeeName %></h1>
 <h1><%= coffee.roaster %></h1>
 <h1><%= coffee.roastType %> Roast</h1>
+<h1><%= coffee.notes %></h1>
+<h1><%= coffee.description %></h1>
+<h1 href= <%= coffee.link %>>Visit Roaster's Site</h1>
 
 
   </tbody>
@@ -62,3 +65,5 @@
     </select>
     <input type="submit" value="Add Review">
   </form>
+
+  <%- include('../partials/footer') %>
