@@ -1,15 +1,16 @@
 <%- include('../partials/header') %>
+<main class="description">
+<h1 class="coffee-title"><%= coffee.coffeeName %>, <%= coffee.roaster %></h1>
+<img src="/images/genric_coffee.jpg" >
+<div class="description-notes">
+<section> <strong>Description from roaster: <br> </strong><%= coffee.description %></section>
+<section><strong>Tasting notes: <br> </strong><%= coffee.notes %></section>
+</div>
+<a href="<%=coffee.link %>">Visit Roaster's Site </a>
 
-<h1><%= coffee.coffeeName %></h1>
-<h1><%= coffee.roaster %></h1>
-<h1><%= coffee.roastType %> Roast</h1>
-<h1><%= coffee.notes %></h1>
-<h1><%= coffee.description %></h1>
-<h1 href= <%= coffee.link %>>Visit Roaster's Site</h1>
 
+<h3>Reviews for <%= coffee.coffeeName %></h3>
 
-  </tbody>
-</table>
 <% coffee.reviews.forEach(function(c) { %>
     
     <tr>
@@ -53,7 +54,7 @@
 
 
 <form id="add-review-form" method="POST" action="/coffees/description/<%= coffee._id %>">
-    <label>Write a review:</label>
+    <label>Write a review: </label>
     <textarea name="text"></textarea>
     <label>Rating:</label>
     <select name="rating">
@@ -65,5 +66,5 @@
     </select>
     <input type="submit" value="Add Review">
   </form>
-
+</main>
   <%- include('../partials/footer') %>

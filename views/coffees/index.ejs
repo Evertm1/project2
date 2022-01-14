@@ -1,14 +1,19 @@
 <%- include('../partials/header') %>
 
-<h1>Index page</h1>
+<main class="main-index">
 
-<a href="auth/google"> Login with Google</a>
+<div class="welcome">
+   Begin by selecting your preferred roast. 
+</div>
 
-<a href="/coffees/light">Light</a>
-<a href="/coffees/medium">Medium</a>
-<a href="/coffees/dark">Dark</a>
+<div class="button-container">
+<a href="/coffees/light" class="roast-button" id="light">
+    <div>Light</div></a>
+<a href="/coffees/medium" class="roast-button" id="medium">Medium</a>
+<a href="/coffees/dark" class="roast-button" id="dark">Dark</a>
+</div>
 
-
-<a href="/coffees/description/61dca79512a7b91a9f224db2">description page test</a>
 
 <%- include('../partials/footer') %>
+
+</main>

@@ -1,12 +1,22 @@
 <%- include('../partials/header') %>
-
-<h1>Show Page, will include coffees by roast type</h1>
-<table>
+<main class="main-show">
+<h4 class="show-heading">
+    Here are some great <%= roast %> roasts for you to try.
+</h4>
+<table class="show-table">
+<tbody>
+    <tr>
+        <th>Name</th>
+        <th>Roaster</th>
+        
+    </tr>
+</tbody>
 <tbody>
     <% coffee.forEach(function(c) { %>
       <tr>
         <td><%= c.coffeeName %></td>
         <td><%= c.roaster %></td>
+        
         <td><a href="/coffees/description/<%= c._id %>">View Description</a></td>
       </tr>
       <% }); %>
@@ -14,3 +24,5 @@
 </table>
 
 <%- include('../partials/footer') %>
+
+</main>

@@ -23,7 +23,8 @@ function show(req, res){
         console.log(coffeeDocument);
         // res.send(coffeeDocument) // will change to res.render
         res.render('coffees/show', {
-            coffee: coffeeDocument
+            coffee: coffeeDocument,
+            roast: req.params.roastType
         })
     })
 }
