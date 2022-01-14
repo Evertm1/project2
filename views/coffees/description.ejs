@@ -16,17 +16,18 @@
 <% coffee.reviews.forEach(function(c) { %>
     
     <tr>
-        <td><%= c.userName %>:</td>
-        <td><%= c.text %></td>
-        <td><%= c.rating %> Stars</td>
-        <td><%= c.user %></td>
+        <td><strong><%= c.userName %>:</strong></td>
+        <td><%= c.text %> | </td>
+        <td><strong><%= c.rating %> Stars</strong></td>
+        <td><%= c.user %></td><br><br>
+
         <%# console.log(c.userId, user._id) %>
         <% if (user && c.userId === user._id.toString()) { %>
         
          <%# if (c.userId.equals(user._id)) { %>
         <%# if (user && c.userId.equals(user._id)) { %>
 
-        
+        <br><br>
         <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=DELETE"
             class="delete-form" method="POST"> 
         <button>Delete</button>
@@ -55,7 +56,7 @@
     
 <% }); %>
 
-
+<br><br><br>
 <form id="add-review-form" method="POST" action="/coffees/description/<%= coffee._id %>">
     <label>Write a review: </label>
     <textarea name="text"></textarea>
