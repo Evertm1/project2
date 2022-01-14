@@ -61,6 +61,20 @@ body > nav {
   justify-content: center;
   align-items: center;
 }
+#light {
+
+  background-color: rgb(76, 27, 15);
+}
+
+#medium {
+  
+  background-color: rgb(57, 28, 21);
+}
+
+#dark {
+  
+  background-color: rgb(34, 20, 15);
+}
 
 .main-show{
   display: grid;
@@ -91,14 +105,38 @@ th {
 .main-description {
   display: grid;
   justify-content: center;
-  grid-template-rows: 100px 250px;
-  
+  align-items: center;
+  grid-template-rows: 100px;
+  grid-template-columns: 500px 300px;
+  margin-left: 30px;
+  grid-template-areas:
+  "coffee-title" "coffee-title"
+  "image" "notes"
+  "visit" "visit"
+  "reviews" "reviews"
 }
 
 img {
-  width: 150px;
+
+  width: 160px;
+  margin-left: 100px;
   grid-area: image;
 }
 
+.coffee-title {
+  grid-area: coffee-title
+}
 
+.description-notes {
+  grid-area: notes;
+  width: 400px;
+}
+
+.reviews {
+  grid-area: reviews
+}
+
+.visit {
+  grid-area: visit
+}
 

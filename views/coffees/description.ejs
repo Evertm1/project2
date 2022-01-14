@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
-<main class="description">
+<main class="main-description">
 <h1 class="coffee-title"><%= coffee.coffeeName %>, <%= coffee.roaster %></h1>
 <img src="/images/genric_coffee.jpg" >
 <div class="description-notes">
+<br>
 <section> <strong>Description from roaster: <br> </strong><%= coffee.description %></section>
+<br>
 <section><strong>Tasting notes: <br> </strong><%= coffee.notes %></section>
 </div>
-<a href="<%=coffee.link %>">Visit Roaster's Site </a>
 
-
+<a href="<%=coffee.link %>" class= "visit">Visit Roaster's Site </a>
+<div class="reviews">
 <h3>Reviews for <%= coffee.coffeeName %></h3>
 
 <% coffee.reviews.forEach(function(c) { %>
@@ -16,7 +18,7 @@
     <tr>
         <td><%= c.userName %>:</td>
         <td><%= c.text %></td>
-        <td><%= c.rating %></td>
+        <td><%= c.rating %> Stars</td>
         <td><%= c.user %></td>
         <%# console.log(c.userId, user._id) %>
         <% if (user && c.userId === user._id.toString()) { %>
@@ -32,7 +34,7 @@
         <form action="/coffees/description/<%= coffee._id %>/<%=c._id%>?_method=PUT"
             class="update-form" method="POST">
         <input type="hidden" value="<%=c._id%>" name="id"/>
-        <label>Edit Review</label>
+        <label>Edit Review:</label>
         <textarea name="editReviewText"></textarea>
         <label>Edit Rating</label>
         <select name="editRating">
@@ -42,8 +44,9 @@
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-        <button> Save </button><br>
+        <button> Save </button><br><br><br>
         </form>
+        
         
         <% } %>
         
@@ -66,5 +69,9 @@
     </select>
     <input type="submit" value="Add Review">
   </form>
+</div>
 </main>
+<br>
+<br>
+<br>
   <%- include('../partials/footer') %>
